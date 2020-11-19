@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kane- To Do List</title>
+    <!-- Font Avesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--FontFamily-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Lib -->
+    <link rel="stylesheet" href="esset/css/_grid.css">
+    <link rel="stylesheet" href="esset/css/main.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="loading d-flex">
+            <div class="cricle"> </div>
+        </div>
+        <div class="overlay"></div>
+        <div class="btnAdd d-flex">
+            <img src="./esset/image/plus.png" alt="add">
+            <div class="txt__add">
+                Add
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </div>
+        </div>
+
+        <div class="form-add d-flex">
+            <div class="form d-flex">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                <div class="file">
+                    <label for="mail">Mail</label><br>
+                    <input type="text" id="mail" placeholder="Mail" value="">
+                </div>
+
+                <div class="file">
+                    <label for="des">Desription</label><br>
+                    <input type="text" id="des" placeholder="Desription" value="">
+                </div>
+
+                <div class="file">
+                    <label for="author">Author</label><br>
+                    <input type="text" id="author" placeholder="Author" value="">
+                </div>
+
+                <div class="add-link">
+                    <button id="complete" class="complete1" onclick="AddItem()">Add</button>
+                    <button id="cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-delete d-flex">
+            <div class="form d-flex"><i class="fa fa-trash-o" aria-hidden="true"></i>
+                <h3>Are you sure ?</h3>
+                <div class="dflex">
+                    <button class="btn" id="yes">Yes</button>
+                    <button class="btn" id="no">No</button>
+                </div>
+            </div>
+        </div>
+        <!-- Start : Nav  -->
+        <div class="nav d-flex">
+            <div class="hambuger">
+                <i class="fa fa-bars nav__btn--i" aria-hidden="true"></i>
+            </div>
+            <div class="logo">
+                <img src="esset/image/logo.png" alt="logo">
+            </div>
+            <div class="nav___search d-flex">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" id="search" placeholder="Search">
+            </div>
+            <div class="nav__icon d-flex">
+                <i class="fa fa-th nav__btn--i" aria-hidden="true"></i>
+                <i class="fa fa-server nav__btn--i" aria-hidden="true"></i>
+            </div>
+        </div>
+        <!-- End : Nav -->
+
+        <!-- Start : Header -->
+        <div class="header d-flex">
+            <div class="header__item">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Mail
+            </div>
+            <div class="header__item">
+                <ul class="d-flex " style="">
+                    <li><a href="#"><i class="fa fa-google nav__btn--i" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-cloud-download nav__btn--i" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-gg-circle nav__btn--i" aria-hidden="true"></i></i></a></li>
+                    <li><a href="#"><i class="fa fa-ellipsis-v nav__btn--i" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- End:Header -->
+
+        <!-- Start:Main -->
+        <div class="main">
+            <div class="sidebar col-lg-2">
+                <div class="sidebar__item active ">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                    <span>Inbox</span>
+                </div>
+                <div class="sidebar__item">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span>Started</span>
+                </div>
+                <div class="sidebar__item">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    <span>Snoozed</span>
+                </div>
+                <div class="sidebar__item">
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    <span>Sent</span>
+                </div>
+                <div class="sidebar__item">
+                    <i class="fa fa-file" aria-hidden="true"></i>
+                    <span>Drafts</span>
+                </div>
+                <div class="sidebar__item">
+                    <i class="fa fa-comments" aria-hidden="true"></i>
+                    <span>Note</span>
+                </div>
+            </div>
+
+            <div class="table col-lg-10 col-12">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="id">ID</th>
+                            <th class="mail">Mail</th>
+                            <th class="des">Description</th>
+                            <th class="author">Author</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="tableBody">
+                        <tr>
+                            <!-- <td class="id"></td>
+                            <td class="emial">tdkien.99.vn@gmail.com</td>
+                            <td class="author">Chào bạn đến từ</td>
+                            <td class="">Kane</td>
+                            <td class="edit"><i class="fa fa-pencil" aria-hidden="true" ></i></td>
+                            <td class="delete"><i class="fa fa-trash" aria-hidden="true"></i></td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+        <!-- End:Main -->
+
+    </div>
+    <script src="esset/js/active.js"></script>
+    <script src="esset/js/main.js"></script>
+</body>
+
+</html>
